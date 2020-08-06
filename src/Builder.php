@@ -26,6 +26,8 @@ class Builder
      */
     protected $_st_classes;
 
+    protected $password;
+
     /**
      * Output directory for documentation
      *
@@ -64,13 +66,13 @@ class Builder
      *
      * @param array $st_classes
      */
-    public function __construct(array $st_classes, $s_output_dir, $title = 'php-apidoc', $s_output_file = 'index.html', $template_path = null , $detail_domain = '')
+    public function __construct(array $st_classes, $s_output_dir, $title = 'php-apidoc', $s_output_file = 'index.html', $template_path = null , $detail_domain = '',$password='')
     {
         $this->_st_classes = $st_classes;
         $this->_output_dir = $s_output_dir;
         $this->_title = $title;
         $this->_output_file = $s_output_file;
-
+        $this->password = $password;
         if ($template_path) {
             $this->template_path = $template_path;
         }
@@ -153,7 +155,8 @@ class Builder
                     '{{ body }}'                    => $this->generateBodyTemplate($counter, $docs),
                     '{{ sandbox_form }}'            => $this->generateSandboxForm($docs, $counter),
                     '{{ sample_response_headers }}' => $sampleOutput[0],
-                    '{{ sample_response_body }}'    => $sampleOutput[1]
+                    '{{ sample_response_body }}'    => $sampleOutput[1],
+                    '{{ password }}'                => $this->password,
                 );
 
                 $template[$section][] = strtr($partial_template, $tr);

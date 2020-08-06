@@ -76,12 +76,13 @@
         <div class="panel-group" id="accordion">
             <div>
     <div class="show-psw-class" data-eltid="0" style="display: none">
-        <input type="text" id="psw-id" placeholder="请输入查看密码">
+        <input type="password" id="psw-id" placeholder="请输入查看密码">
         <button id="bt-show-id" class="btn btn-primary btn-xs">查看</button>
         <span id="span-tip" style="color: red;"></span>
     </div>
 <div class="content-cl-0 content-class" style="display: none">
     <input id="copyLinkInput" class="copy-input" type="hidden"/>
+    <input id="psw" class="" value="cisdi" type="hidden"/>
     <input type="hidden" class='input-code' value="d35c1c66faaabec268691c02f3eeb0eac8ef71f0" data-eltid="0">
     <h2 id="section-0">relize<span><button class="sectionCopyBt btn btn-primary btn-xs" data-eltid="0" style="margin-left: 20px;">复制</button></span></h2>
     <div class="panel panel-default">
@@ -90,7 +91,7 @@
             <span><span class="label label-primary">POST</span></span>
             <p style="margin-top: 5px"><a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> 路由: relize/index<button class="btn btn-info btn-xs" style="margin-left: 20px;">详情</button></a></p>
             <span class="detailUrl-class" style="margin-top: 5px">
-                <a href="src/apidocs/api.html?m=d35c1c66faaabec268691c02f3eeb0eac8ef71f0" id="detailUrl-0">详情: src/apidocs/api.html?m=d35c1c66faaabec268691c02f3eeb0eac8ef71f0</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="0">复制</button></span>
+                <a href="apidocs/api.html?m=d35c1c66faaabec268691c02f3eeb0eac8ef71f0" id="detailUrl-0">详情: apidocs/api.html?m=d35c1c66faaabec268691c02f3eeb0eac8ef71f0</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="0">复制</button></span>
         </h4>
     </div>
     <div id="collapseOne0" class="panel-collapse collapse">
@@ -228,6 +229,8 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
     var getInput = GetQueryString('m');
+    var pswVal = $('#psw').val()
+    $('#psw').remove()
     //无参数，展示输入密码框
     if(getInput == null){
         //当前无参数
@@ -238,7 +241,7 @@
         })
         $('#bt-show-id').click(function () {
             var psw = $('#psw-id').val();
-            if(psw == 'cisdi'){
+            if(psw == pswVal){
                 $('.content-class').css('display','block')
                 $('.show-psw-class').css('display','none')
                 $('.detailUrl-class').css('display','block')
@@ -293,12 +296,13 @@
 </script>
 <div>
     <div class="show-psw-class" data-eltid="1" style="display: none">
-        <input type="text" id="psw-id" placeholder="请输入查看密码">
+        <input type="password" id="psw-id" placeholder="请输入查看密码">
         <button id="bt-show-id" class="btn btn-primary btn-xs">查看</button>
         <span id="span-tip" style="color: red;"></span>
     </div>
 <div class="content-cl-1 content-class" style="display: none">
     <input id="copyLinkInput" class="copy-input" type="hidden"/>
+    <input id="psw" class="" value="cisdi" type="hidden"/>
     <input type="hidden" class='input-code' value="05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" data-eltid="1">
     <h2 id="section-1">getUser<span><button class="sectionCopyBt btn btn-primary btn-xs" data-eltid="1" style="margin-left: 20px;">复制</button></span></h2>
     <div class="panel panel-default">
@@ -307,7 +311,7 @@
             <span><span class="label label-primary">POST</span></span>
             <p style="margin-top: 5px"><a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1"> 路由: api/getUser<button class="btn btn-info btn-xs" style="margin-left: 20px;">详情</button></a></p>
             <span class="detailUrl-class" style="margin-top: 5px">
-                <a href="src/apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" id="detailUrl-1">详情: src/apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="1">复制</button></span>
+                <a href="apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" id="detailUrl-1">详情: apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="1">复制</button></span>
         </h4>
     </div>
     <div id="collapseOne1" class="panel-collapse collapse">
@@ -421,6 +425,8 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
     var getInput = GetQueryString('m');
+    var pswVal = $('#psw').val()
+    $('#psw').remove()
     //无参数，展示输入密码框
     if(getInput == null){
         //当前无参数
@@ -431,7 +437,7 @@
         })
         $('#bt-show-id').click(function () {
             var psw = $('#psw-id').val();
-            if(psw == 'cisdi'){
+            if(psw == pswVal){
                 $('.content-class').css('display','block')
                 $('.show-psw-class').css('display','none')
                 $('.detailUrl-class').css('display','block')
@@ -486,12 +492,13 @@
 </script>
 <div>
     <div class="show-psw-class" data-eltid="2" style="display: none">
-        <input type="text" id="psw-id" placeholder="请输入查看密码">
+        <input type="password" id="psw-id" placeholder="请输入查看密码">
         <button id="bt-show-id" class="btn btn-primary btn-xs">查看</button>
         <span id="span-tip" style="color: red;"></span>
     </div>
 <div class="content-cl-2 content-class" style="display: none">
     <input id="copyLinkInput" class="copy-input" type="hidden"/>
+    <input id="psw" class="" value="cisdi" type="hidden"/>
     <input type="hidden" class='input-code' value="05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" data-eltid="2">
     <h2 id="section-2">getUser2<span><button class="sectionCopyBt btn btn-primary btn-xs" data-eltid="2" style="margin-left: 20px;">复制</button></span></h2>
     <div class="panel panel-default">
@@ -500,7 +507,7 @@
             <span><span class="label label-primary">POST</span></span>
             <p style="margin-top: 5px"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"> 路由: api/getUser<button class="btn btn-info btn-xs" style="margin-left: 20px;">详情</button></a></p>
             <span class="detailUrl-class" style="margin-top: 5px">
-                <a href="src/apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" id="detailUrl-2">详情: src/apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="2">复制</button></span>
+                <a href="apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570" id="detailUrl-2">详情: apidocs/api.html?m=05c52d4fe1b1eb05e6ecf0d7e93603731e56e570</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="2">复制</button></span>
         </h4>
     </div>
     <div id="collapseOne2" class="panel-collapse collapse">
@@ -614,6 +621,8 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
     var getInput = GetQueryString('m');
+    var pswVal = $('#psw').val()
+    $('#psw').remove()
     //无参数，展示输入密码框
     if(getInput == null){
         //当前无参数
@@ -624,7 +633,7 @@
         })
         $('#bt-show-id').click(function () {
             var psw = $('#psw-id').val();
-            if(psw == 'cisdi'){
+            if(psw == pswVal){
                 $('.content-class').css('display','block')
                 $('.show-psw-class').css('display','none')
                 $('.detailUrl-class').css('display','block')
@@ -683,7 +692,7 @@
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2020-08-06, 14:59:40
+                Generated on 2020-08-06, 16:19:09
             </div>
             <div class="col-md-6" align="right">
                 <a href="javascript:;" target="_blank">melody/api-auto-doc</a>

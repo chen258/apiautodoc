@@ -31,7 +31,7 @@ class ApiDocBuilder
      */
     public function buildApiDoc(array $classes,string $output_dir, string $title ,string $output_file,string $detail_url_domain){
         try {
-            $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain);
+            $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain,'cisdi');
             $builder->generate();
             return true;
         } catch (\Exception $e) {
