@@ -2,7 +2,7 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc;
+namespace ApiDoc;
 
 /**
  * @license http://opensource.org/licenses/bsd-license.php The BSD License

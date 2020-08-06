@@ -2,7 +2,7 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc;
+namespace ApiDoc;
 
 /**
 * Class imported from https://github.com/isRuslan/php-template

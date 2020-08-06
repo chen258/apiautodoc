@@ -2,7 +2,7 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc\View;
+namespace ApiDoc\View;
 
 /**
  * @license http://opensource.org/licenses/bsd-license.php The BSD License
@@ -17,7 +17,7 @@ class JsonView extends BaseView
     {
         $data     = json_encode($this->st_data, JSON_FORCE_OBJECT);
 
-        $response = new \Crada\Apidoc\Response();
+        $response = new \ApiDoc\Response();
         $response->setContentType('application/json');
         $response->closeConection();
         $response->send($data);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Crada\Apidoc\TestClasses;
+namespace ApiDoc\TestClasses;
 
 class Article
 {

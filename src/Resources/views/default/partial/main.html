@@ -2,6 +2,7 @@
     <div class="show-psw-class" data-eltid="{{ elt_id }}" style="display: none">
         <input type="text" id="psw-id" placeholder="请输入查看密码">
         <button id="bt-show-id" class="btn btn-primary btn-xs">查看</button>
+        <span id="span-tip" style="color: red;"></span>
     </div>
 <div class="content-cl-{{ elt_id }} content-class" style="display: none">
     <input id="copyLinkInput" class="copy-input" type="hidden"/>
@@ -102,9 +103,10 @@
                 $('.content-class').css('display','block')
                 $('.show-psw-class').css('display','none')
                 $('.detailUrl-class').css('display','block')
+                $('#span-tip').html('')
             }else{
                 $('.detailUrl-class').css('display','none')
-                alert('密码错误')
+                $('#span-tip').html('密码错误')
             }
         })
     }else{

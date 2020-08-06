@@ -2,9 +2,9 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc\View;
+namespace ApiDoc\View;
 
-use Crada\Apidoc\Exception;
+use ApiDoc\Exception;
 
 /**
  * @license http://opensource.org/licenses/bsd-license.php The BSD License

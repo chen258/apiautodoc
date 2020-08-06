@@ -7,9 +7,6 @@
  */
 namespace ApiDoc;
 
-use Crada\Apidoc\Builder;
-use Crada\Apidoc\Exception;
-
 /**
  * @title
  * @description 需要实现的功能

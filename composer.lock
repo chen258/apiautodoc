@@ -9,7 +9,7 @@
         {
             "name": "crada/php-apidoc",
             "version": "1.3.9",
-            "target-dir": "Crada/Apidoc",
+            "target-dir": "Crada/ApiDoc",
             "source": {
                 "type": "git",
                 "url": "https://github.com/calinrada/php-apidoc.git",

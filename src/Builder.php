@@ -2,12 +2,9 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc;
+namespace ApiDoc;
 
-use Crada\Apidoc\Extractor;
-use Crada\Apidoc\View\JsonView;
-use Crada\Apidoc\Template;
-use Crada\Apidoc\Exception;
+use ApiDoc\View\JsonView;
 
 /**
  * @license http://opensource.org/licenses/bsd-license.php The BSD License
@@ -53,7 +50,7 @@ class Builder
      * Template file path
      * @var string
      **/
-    protected $template_path   = __DIR__.'/Resources/views/default';
+    protected $template_path   = __DIR__ . '/Resources/views/default';
 
     /**
      * Template object

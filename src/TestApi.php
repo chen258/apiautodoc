@@ -5,7 +5,7 @@
  * Date: 2020-08-04
  * Time: 17:51
  */
-namespace Apidoc;
+namespace ApiDoc;
 require_once "vendor/autoload.php";
 
 class TestApi
@@ -37,6 +37,21 @@ class TestApi
      * @ApiReturn(type="object")
      */
     public function getUser($a=2,$b=1)
+    {
+        return 2;
+    }
+
+    /**
+     * @ApiDescription(section="getUser2", description="description")
+     * @ApiMethod(type="post")
+     * @ApiRoute(name="api/getUser")
+     * @param int $a
+     * @param int $b
+     * @ApiParams(name="", type="", nullable=false, description="")
+     * @return int
+     * @ApiReturn(type="object")
+     */
+    public function getUser2($a=2,$b=1)
     {
         return 2;
     }

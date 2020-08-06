@@ -2,9 +2,9 @@
 /**
  * This file is part of the php-apidoc package.
  */
-namespace Crada\Apidoc;
+namespace ApiDoc;
 
-use Crada\Apidoc\Exception;
+use ApiDoc\Exception;
 
 /**
  * Class imported from https://github.com/eriknyk/Annotations
