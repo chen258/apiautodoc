@@ -27,11 +27,12 @@ class ApiDocBuilder
      * @param string $title API页面标题
      * @param string $output_file 文件名
      * @param string $detail_url_domain 详情页面的域名目录
+     * @param string $psw 查看全部的API的密码
      * @return bool
      */
-    public function buildApiDoc(array $classes,string $output_dir, string $title ,string $output_file,string $detail_url_domain){
+    public function buildApiDoc(array $classes,string $output_dir, string $title ,string $output_file,string $detail_url_domain,$psw){
         try {
-            $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain,'cisdi');
+            $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain,$psw);
             $builder->generate();
             return true;
         } catch (\Exception $e) {

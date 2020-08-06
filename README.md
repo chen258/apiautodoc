@@ -60,7 +60,8 @@ $api = new \ApiDoc\ApiDocBuilder();
 //第三个参数为当前文件生成后的标题
 //第四个参数为API文件名需加上后缀
 //第五个参数为API文件的访问完整域名
-$api->buildApiDoc(['ApiDoc\TestApi'],__DIR__ . '/apidocs/','测试API平台','api.html','apidocs/api.html');
+//第六个参数为查看全部API的密码
+$api->buildApiDoc(['ApiDoc\TestApi'],__DIR__ . '/apidocs/','测试API平台','api.html','apidocs/api.html','hello');
 echo '创建完成';
 ```
 - 然后执行创建API文档文件/Then, execute it via CLI
