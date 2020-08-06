@@ -22,18 +22,11 @@ use Crada\Apidoc\Exception;
 class ApiDocBuilder
 {
 
-    public function buildApiDoc(){
-        $classes = array(
-            'ApiDoc\TestApi',
-        );
-
-        $output_dir  = __DIR__.'/apidocs';
-        $output_file = 'api.html'; // defaults to index.html
-        $detail_url_domain = '/src/apidocs/api.html';
+    public function buildApiDoc($classes, $output_dir, $title ,$output_file,$detail_url_domain){
         try {
-            $builder = new Builder($classes, $output_dir, '测试APIDOC',$output_file, null,$detail_url_domain);
+            $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain);
             $builder->generate();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo 'There was an error generating the documentation: ', $e->getMessage();
         }
     }
