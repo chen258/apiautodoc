@@ -21,13 +21,25 @@ use Crada\Apidoc\Exception;
  */
 class ApiDocBuilder
 {
-
-    public function buildApiDoc($classes, $output_dir, $title ,$output_file,$detail_url_domain){
+    /**
+     * @ApiDescription(section="创建API文档", description="创建API文件页面")
+     * @ApiMethod(type="post")
+     * @ApiRoute(name="buildApiDoc")
+     * @param array $classes 类命名空间数组
+     * @param string $output_dir 生成的api文档html存放目录
+     * @param string $title API页面标题
+     * @param string $output_file 文件名
+     * @param string $detail_url_domain 详情页面的域名目录
+     * @return bool
+     */
+    public function buildApiDoc(array $classes,string $output_dir, string $title ,string $output_file,string $detail_url_domain){
         try {
             $builder = new Builder($classes, $output_dir, $title,$output_file, null,$detail_url_domain);
             $builder->generate();
+            return true;
         } catch (\Exception $e) {
             echo 'There was an error generating the documentation: ', $e->getMessage();
         }
+        return false;
     }
 }
