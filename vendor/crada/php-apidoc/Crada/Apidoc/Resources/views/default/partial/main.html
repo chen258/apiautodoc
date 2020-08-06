@@ -1,0 +1,152 @@
+<div>
+    <div class="show-psw-class" data-eltid="{{ elt_id }}" style="display: none">
+        <input type="text" id="psw-id" placeholder="请输入查看密码">
+        <button id="bt-show-id" class="btn btn-primary btn-xs">查看</button>
+    </div>
+<div class="content-cl-{{ elt_id }} content-class" style="display: none">
+    <input id="copyLinkInput" class="copy-input" type="hidden"/>
+    <input type="hidden" class='input-code' value="{{ routeCode }}" data-eltid="{{ elt_id }}">
+    <h2 id="section-{{ elt_id }}">{{ section }}<span><button class="sectionCopyBt btn btn-primary btn-xs" data-eltid="{{ elt_id }}" style="margin-left: 20px;">复制</button></span></h2>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span>{{ method }}</span>
+            <p style="margin-top: 5px"><a data-toggle="collapse" data-parent="#accordion{{ elt_id }}" href="#collapseOne{{ elt_id }}"> 路由: {{ route }}<button class="btn btn-info btn-xs" style="margin-left: 20px;">详情</button></a></p>
+            <span class="detailUrl-class" style="margin-top: 5px">
+                <a href="{{ detailUrl }}" id="detailUrl-{{ elt_id }}">详情: {{ detailUrl }}</a><button class="detailUrlCopyBt btn btn-primary btn-xs" style="margin-left: 20px;" data-eltid="{{ elt_id }}">复制</button></span>
+        </h4>
+    </div>
+    <div id="collapseOne{{ elt_id }}" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab{{ elt_id }}">
+                <li class="active"><a href="#info{{ elt_id }}" data-toggle="tab">Info</a></li>
+                <!--<li><a href="#sandbox{{ elt_id }}" data-toggle="tab">Sandbox</a></li>-->
+                <li><a href="#sample{{ elt_id }}" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info{{ elt_id }}">
+                    <div class="well">
+                    {{ description }}
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        {{ headers }}
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        {{ parameters }}
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        {{ body }}
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <!--<div class="tab-pane" id="sandbox{{ elt_id }}">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-md-12">-->
+                        <!--{{ sandbox_form }}-->
+                        <!--</div>-->
+                        <!--<div class="col-md-12">-->
+                            <!--Response-->
+                            <!--<hr>-->
+                            <!--<div class="col-md-12" style="overflow-x:auto">-->
+                                <!--<pre id="response_headers{{ elt_id }}"></pre>-->
+                                <!--<pre id="response{{ elt_id }}"></pre>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!-- #sandbox -->
+
+                <div class="tab-pane" id="sample{{ elt_id }}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ sample_response_headers }}
+                            {{ sample_response_body }}
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+    var getInput = GetQueryString('m');
+    //无参数，展示输入密码框
+    if(getInput == null){
+        //当前无参数
+        $('.show-psw-class').each(function () {
+            if($(this).attr('data-eltid') == 0){
+                $(this).css('display','block')
+            }
+        })
+        $('#bt-show-id').click(function () {
+            var psw = $('#psw-id').val();
+            if(psw == 'cisdi'){
+                $('.content-class').css('display','block')
+                $('.show-psw-class').css('display','none')
+                $('.detailUrl-class').css('display','block')
+            }else{
+                $('.detailUrl-class').css('display','none')
+                alert('密码错误')
+            }
+        })
+    }else{
+        $('.detailUrl-class').css('display','none')
+        $('.content-class').css('display','block')
+        $('.show-psw-class').css('display','none')
+        $('.input-code').each(function () {
+            var code = $(this).val();
+            if(code != getInput && getInput != null){
+                var eltid = $(this).attr('data-eltid');
+                $('.content-cl-' + eltid).css('display','none');
+            }
+        });
+    }
+    $('.detailUrlCopyBt').each(function () {
+        $(this).click(function () {
+            var eltid = $(this).attr('data-eltid')
+            var href = $('#detailUrl-' + eltid).attr('href');
+            var oInput = document.createElement('input');
+            oInput.value = href;
+            document.body.appendChild(oInput);
+            oInput.select();
+            document.execCommand("Copy");
+            oInput.remove();
+        })
+    })
+    $('.sectionCopyBt').each(function () {
+        $(this).click(function () {
+            var eltid = $(this).attr('data-eltid')
+            var href = $('#section-' + eltid).html();
+            var oInput = document.createElement('input');
+            oInput.value = href;
+            document.body.appendChild(oInput);
+            oInput.select();
+            document.execCommand("Copy");
+            oInput.remove();
+        })
+    })
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+</script>
