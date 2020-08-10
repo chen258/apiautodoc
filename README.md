@@ -3,22 +3,12 @@
 
 > Generate documentation for php API based application. No dependency. No framework required.(base crada/php-apidoc)
 ## Requirements
-PHP >= 5.3.2
+PHP >= 7.1
 ## Installation
 - 添加至composer.json
 - The recommended installation is via composer. Just add the following line to your composer.json:
 ```
-{
-    ...
-    "require": {
-        ...
-        "crada/php-apidoc": "@dev"
-    }
-}
-
-```
-```
-$ php composer.phar update
+composer require melody-chen/api-auto-doc
 ```
 ## Usage/使用示例
 - 函数注释文档示例/Example of function comment documentation
