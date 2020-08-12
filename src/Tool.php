@@ -30,6 +30,6 @@ class Tool
         curl_setopt($curlobj, CURLOPT_POST, 1); // 提交方式：post,参数中的1代表true，0代表false
         curl_setopt($curlobj, CURLOPT_POSTFIELDS, ['appid'=>$appid,'appsecret'=>$appsecret]); // 提交的请求参数
         $output = curl_exec($curlobj);
-        var_dump($output);
+        return $output;
     }
 }
