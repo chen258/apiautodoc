@@ -6,7 +6,6 @@
  * Time: 17:51
  */
 namespace ApiDoc;
-require_once "vendor/autoload.php";
 
 class TestApi
 {

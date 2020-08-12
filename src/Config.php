@@ -10,5 +10,5 @@ namespace ApiDoc;
  */
 class Config
 {
-
+    static $check_api_url = 'http://localhost:7889/api/user/checkAppid?appid=1&appsecret=2';
 }
