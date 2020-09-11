@@ -10,6 +10,6 @@ namespace ApiDoc;
  */
 class Config
 {
-    const CHECK_APPID_URL= '配置检验appid的地址';
-    const GET_APPID_INFO_URL = '获取appid信息';
+    const CHECK_APPID_URL= 'http://sdk.zhuliinfo.com/api/user/checkAppid';
+    const GET_APPID_INFO_URL = 'http://sdk.zhuliinfo.com/api/user/getAppidInfo';
 }
