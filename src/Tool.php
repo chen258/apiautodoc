@@ -81,8 +81,11 @@ class Tool
         return $result;
     }
 
-    public function makeSign($inputParams)
+    public function makeSign($inputParams,$isSetNonceStr = true)
     {
+        if($isSetNonceStr){
+            $inputParams['nonce_str'] = self::getNonceStr();
+        }
         //签名步骤一：按字典序排序参数
         ksort($inputParams);
         $string = $this->toUrlParams($inputParams);
