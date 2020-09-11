@@ -41,10 +41,8 @@ class Tool
         }
         throw new \Exception('验证appid平台出错');
     }
-    public function checkInputSign($inputSign)
+    public function checkInputSign($inputSign,$inputParams)
     {
-        //根据传入参数自行创建签名
-        $inputParams = input('');
         try{
             if(!isset($inputParams['appid'])){
                 throw new \Exception('请传入appid');
