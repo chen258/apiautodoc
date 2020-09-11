@@ -41,6 +41,17 @@ class Tool
         }
         throw new \Exception('验证appid平台出错');
     }
+
+    /**
+     * @ApiDescription(section="checkInputSign", description="检验输入的签名是否正确")
+     * @ApiMethod(type="post")
+     * @ApiRoute(name="checkInputSign")
+     * @param $inputSign
+     * @param $inputParams
+     * @ApiParams(name="", type="", nullable=false, description="")
+     * @return array
+     * @ApiReturn(type="object", sample="{'code':'1:成功 0:失败','data':{}",'msg':'string')
+     */
     public function checkInputSign($inputSign,$inputParams)
     {
         try{
@@ -64,6 +75,16 @@ class Tool
     }
 
 
+    /**
+     * @ApiDescription(section="makeSignByKey", description="传入密钥得到签名")
+     * @ApiMethod(type="post")
+     * @ApiRoute(name="makeSignByKey")
+     * @param $inputParams
+     * @param $key
+     * @ApiParams(name="", type="", nullable=false, description="")
+     * @return string
+     * @ApiReturn(type="object", sample="{'code':'1:成功 0:失败','data':{}",'msg':'string')
+     */
     public function makeSignByKey($inputParams,$key)
     {
         //签名步骤一：按字典序排序参数
