@@ -52,11 +52,14 @@ class Tool
      * @return array
      * @ApiReturn(type="object", sample="{'code':'1:成功 0:失败','data':{}",'msg':'string')
      */
-    public function checkInputSign($inputSign,$inputParams)
+    public function checkInputSign($inputSign,$inputParams,$isCheckNonceStr=true)
     {
         try{
             if(!isset($inputParams['appid'])){
                 throw new \Exception('请传入appid');
+            }
+            if($isCheckNonceStr && (!isset($inputParams['nonce_str']) || empty($inputParams['nonce_str']))){
+                throw new \Exception('请传入nonce_str');
             }
             $ret = $this->getAppidInfo($inputParams['appid']);
             $key = $ret['appsecret'];
